@@ -6,11 +6,22 @@
 #    By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 17:41:09 by iumorave          #+#    #+#              #
-#    Updated: 2024/10/15 19:14:19 by iumorave         ###   ########.fr        #
+#    Updated: 2024/10/15 20:27:02 by iumorave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = $(addsuffix .c, ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint ft_strlen ft_memset)
+SRC = $(addsuffix .c, \
+ft_isalpha \
+ft_isdigit \
+ft_isalnum \
+ft_isascii \
+ft_isprint \
+ft_strlen \
+ft_memset \
+ft_bzero \
+ft_memcpy \
+ft_memmove \
+)
 
 OBJ := $(SRC:%.c=%.o)
 
