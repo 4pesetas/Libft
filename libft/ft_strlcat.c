@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 19:59:30 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/16 18:31:33 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/16 18:06:08 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/16 18:44:31 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	lens;
+	size_t	lend;
 	size_t	i;
-	char	*d;
-	char	*s;
 
-	if (!dst && !src)
-		return (NULL);
+	lens = 0;
+	lend = 0;
 	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	while (i < n)
+	while (src[lens])
+		lens++;
+	while (dst[lend])
+		lend++;
+	if (size <= lend)
+		lens += size;
+	else
+		lens += lend;
+	while (src[i] && size > (lend + 1))
 	{
-		d[i] = s[i];
+		dst[lend] = src[i];
+		lend++;
 		i++;
 	}
-	return (dst);
+	dst[lend] = '\0';
+	return (lens);
 }

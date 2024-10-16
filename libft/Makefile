@@ -6,7 +6,7 @@
 #    By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 17:41:09 by iumorave          #+#    #+#              #
-#    Updated: 2024/10/15 20:27:02 by iumorave         ###   ########.fr        #
+#    Updated: 2024/10/16 20:43:39 by iumorave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,12 @@ ft_memset \
 ft_bzero \
 ft_memcpy \
 ft_memmove \
+ft_strlcpy \
+ft_strlcat \
+ft_toupper \
+ft_tolower \
+ft_strchr \
+ft_strrchr \
 )
 
 OBJ := $(SRC:%.c=%.o)
