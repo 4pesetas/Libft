@@ -6,7 +6,7 @@
 #    By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 17:41:09 by iumorave          #+#    #+#              #
-#    Updated: 2024/10/16 20:43:39 by iumorave         ###   ########.fr        #
+#    Updated: 2024/10/19 21:20:58 by iumorave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,11 @@ ft_toupper \
 ft_tolower \
 ft_strchr \
 ft_strrchr \
+ft_strncmp \
+ft_memchr \
+ft_memcmp \
+ft_strnstr \
+ft_atoi \
 )
 
 OBJ := $(SRC:%.c=%.o)

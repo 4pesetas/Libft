@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 20:20:12 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 18:01:25 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/19 21:06:13 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/19 21:37:05 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	temp;
+	int	sign;
+	int	nb;
 
 	i = 0;
-	temp = (char) c;
-	while (s[i])
+	sign = 1;
+	nb = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	while (i >= 0)
+	if (str[i] == '-')
 	{
-		if (s[i] == temp)
-			return ((char *) &s[i]);
-		i--;
+		sign = -1;
+		i++;
 	}
-	return (NULL);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10;
+		nb += str[i] - 48;
+		i++;
+	}
+	return (nb * sign);
 }

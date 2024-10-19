@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 18:09:16 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 18:41:07 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/19 19:50:00 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/19 20:43:19 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,34 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(const char *dst, const char *src, size_t n)
+char	*ft_strnstr(const char *src, const char *find, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n && (src[i] || dst[i]))
+	if (*find == '\0')
+		return ((char *)src);
+	while (src[i] && i < len)
 	{
-		if (dst[i] != src[i])
-			return ((unsigned char)dst[i] - (unsigned char)src[i]);
+		j = 0;
+		while (src[i + j] && find[j] && (i + j) < len && src[i + j] == find[j])
+			j++;
+		if (find[j] == '\0')
+			return ((char *)&src[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*int main()
 {
-    char s1[] = "abcd";
-    char s2[] = "abaa";
-    int result = ft_strncmp(s2, s1, 3);
-    printf("%d\n", result);
+	char src[] = "abcde";
+	char find[] = "de";
+	char *result = ft_strnstr(src, find, 5);
+	printf("%s\n", result);
 
-    int result2 = strncmp(s2, s1, 3);
-    printf("%d\n", result2);
-
-    return 0;
+	char *result2 = strnstr(src, find, 5);
+	printf("%s\n", result2);
+	return 0;
 }*/

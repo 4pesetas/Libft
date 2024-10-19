@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 18:09:16 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 18:41:07 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/19 19:09:46 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/19 19:47:25 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(const char *dst, const char *src, size_t n)
+int	ft_memcmp(const void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	i = 0;
-	while (i < n && (src[i] || dst[i]))
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	while (i < n)
 	{
-		if (dst[i] != src[i])
-			return ((unsigned char)dst[i] - (unsigned char)src[i]);
+		if (d[i] != s[i])
+			return (d[i] - s[i]);
 		i++;
 	}
 	return (0);
@@ -30,13 +34,13 @@ int	ft_strncmp(const char *dst, const char *src, size_t n)
 
 /*int main()
 {
-    char s1[] = "abcd";
-    char s2[] = "abaa";
-    int result = ft_strncmp(s2, s1, 3);
-    printf("%d\n", result);
+	char src[] = "abcde";
+	char dst[] = "abcdz";
+	int result = ft_memcmp(dst, src, 5);
+	printf("%d\n", result);
 
-    int result2 = strncmp(s2, s1, 3);
-    printf("%d\n", result2);
+	int result2 = memcmp(dst, src, 5);
+	printf("%d\n", result2);
 
-    return 0;
+	return 0;
 }*/

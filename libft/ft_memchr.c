@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/19 18:09:16 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 18:41:07 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/19 18:43:12 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/19 19:07:08 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,31 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(const char *dst, const char *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	temp;
+	unsigned char	*str;
 
+	temp = (unsigned char)c;
+	str = (unsigned char *)s;
 	i = 0;
-	while (i < n && (src[i] || dst[i]))
+	while (i < n)
 	{
-		if (dst[i] != src[i])
-			return ((unsigned char)dst[i] - (unsigned char)src[i]);
+		if (str[i] == temp)
+			return ((void *)&str[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
 /*int main()
 {
-    char s1[] = "abcd";
-    char s2[] = "abaa";
-    int result = ft_strncmp(s2, s1, 3);
-    printf("%d\n", result);
+	char str[] = "abcbfby";
+	int c = 'b';
+	void *result = ft_memchr(str, c, 3);
+	printf("%s\n", result);
 
-    int result2 = strncmp(s2, s1, 3);
-    printf("%d\n", result2);
-
-    return 0;
+	void *result2 = memchr(str, c, 3);
+	printf("%s\n", result2);
+	return 0;
 }*/
