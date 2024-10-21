@@ -6,7 +6,7 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:40:31 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 21:20:41 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:35:14 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *dst, const void *src, size_t n);
 char	*ft_strnstr(const char *src, const char *find, size_t len);
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *str);
 
 #endif
