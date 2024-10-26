@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 18:26:05 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/26 13:17:51 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/26 21:21:38 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/26 22:06:05 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strdup(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*result;
-	int		i;
+	char			*new;
+	int				len;
+	unsigned int	i;
 
+	len = ft_strlen(s);
 	i = 0;
-	result = (char *)malloc((ft_strlen(str) + 1) * sizeof(char));
-	if (!result)
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
 		return (NULL);
-	while (str[i])
+	new[len] = '\0';
+	while (s[i])
 	{
-		result[i] = str[i];
+		new[i] = (*f)(i, s[i]);
 		i++;
 	}
-	result[i] = '\0';
-	return (result);
+	return (new);
 }
 
-/*int main()
+/*char f(unsigned int i, char c)
 {
-	char str[] = "test";
+	return c - 32;
+}
+int main()
+{
+	char s[] = "abcdef";
 
-	char *result = ft_strdup(str);
-	printf("%s\n", result);
-	free (result);
-
-	char *result2 = ft_strdup(str);
-	printf("%s\n", result2);
-	free (result2);
+	char *new = ft_strmapi(s, f);
+	printf("%s\n", new);
+	free (new);
 	return 0;
 }*/

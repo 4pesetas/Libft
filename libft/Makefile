@@ -6,7 +6,7 @@
 #    By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 17:41:09 by iumorave          #+#    #+#              #
-#    Updated: 2024/10/21 20:30:47 by iumorave         ###   ########.fr        #
+#    Updated: 2024/10/26 22:06:46 by iumorave         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,12 @@ ft_strnstr \
 ft_atoi \
 ft_calloc \
 ft_strdup \
+ft_substr \
+ft_strjoin \
+ft_strtrim \
+ft_split \
+ft_itoa \
+ft_strmapi \
 )
 
 OBJ := $(SRC:%.c=%.o)
