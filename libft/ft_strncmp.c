@@ -6,13 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:09:16 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 18:41:07 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:47:00 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 int	ft_strncmp(const char *dst, const char *src, size_t n)
 {

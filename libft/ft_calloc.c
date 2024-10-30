@@ -6,13 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:31:34 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/21 17:51:14 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:44:36 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {

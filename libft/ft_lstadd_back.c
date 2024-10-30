@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 18:26:05 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/29 18:46:26 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/28 16:19:28 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/28 20:00:33 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*result;
-	int		i;
+	t_list	*last;
 
-	i = 0;
-	result = (char *)malloc((ft_strlen(str) + 1) * sizeof(char));
-	if (!result)
-		return (NULL);
-	while (str[i])
+	if (!*lst)
 	{
-		result[i] = str[i];
-		i++;
+		*lst = new;
+		return ;
 	}
-	result[i] = '\0';
-	return (result);
+	last = *lst;
+	while (last->next)
+	{
+		last = last->next;
+	}
+	last->next = new;
 }
-
 /*int main()
 {
-	char str[] = "test";
+	t_list *head = NULL;
 
-	char *result = ft_strdup(str);
-	printf("%s\n", result);
-	free (result);
+	t_list *first = ft_lstnew("first_node");
+	ft_lstadd_back(&head, first);
 
-	char *result2 = ft_strdup(str);
-	printf("%s\n", result2);
-	free (result2);
+	t_list *second = ft_lstnew("second_node");
+	ft_lstadd_back(&head, second);
+
+	while (head)
+	{
+		printf("%s\n", (char *)(head->content));
+		head = head->next;
+	}
+	free(first);
+	free(second);
 	return 0;
 }*/

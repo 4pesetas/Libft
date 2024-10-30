@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 18:05:55 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/29 18:46:35 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/27 20:27:10 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/28 20:01:18 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
+	t_list	*new;
 
-	i = 0;
-	while (s[i])
-	{
-		(*f)(i, &s[i]);
-		i++;
-	}
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
-/*void	f(unsigned int i, char *c)
+/*int main()
 {
-	*c += 1;
-}
-int main()
-{
-	char s[] = "abc..+-  ";
-	ft_striteri(s, f);
-	printf("%s\n", s);
-	return (0);
+	int nb = 42;
+	t_list *new = ft_lstnew(&nb);
+	printf("%d\n", *(int *)new->content);
+	free (new);
+	return 0;
 }*/

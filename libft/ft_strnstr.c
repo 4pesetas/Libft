@@ -6,13 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 19:50:00 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 20:43:19 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:47:10 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strnstr(const char *src, const char *find, size_t len)
 {

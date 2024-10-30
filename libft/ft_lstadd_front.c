@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 18:05:55 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/29 18:46:35 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/27 20:55:35 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/28 20:02:08 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned int	i;
+	new->next = *lst;
+	*lst = new;
+}
+/*int main()
+{
+	t_list *head = NULL;
 
-	i = 0;
-	while (s[i])
+	t_list *first = ft_lstnew("1st node");
+	ft_lstadd_front(&head, first);
+
+	t_list *second = ft_lstnew("2nd node");
+	ft_lstadd_front(&head, second);
+
+	while (head)
 	{
-		(*f)(i, &s[i]);
-		i++;
+		printf("%s\n", (char *)head->content);
+		head = head->next;
 	}
-}
-/*void	f(unsigned int i, char *c)
-{
-	*c += 1;
-}
-int main()
-{
-	char s[] = "abc..+-  ";
-	ft_striteri(s, f);
-	printf("%s\n", s);
-	return (0);
+	free(first);
+	free(second);
+	return 0;
 }*/

@@ -6,13 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:43:12 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/19 19:07:08 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:45:31 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

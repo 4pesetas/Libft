@@ -6,12 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:55:55 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/26 21:19:17 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:44:57 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	int_len(long n)
 {

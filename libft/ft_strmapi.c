@@ -6,12 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 21:21:38 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/26 22:06:05 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:46:53 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

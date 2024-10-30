@@ -6,12 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:33:19 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/26 16:39:25 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:13:53 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	word_counter(char const *s, char c)
 {

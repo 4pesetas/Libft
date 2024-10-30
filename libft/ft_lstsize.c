@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 18:05:55 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/29 18:46:35 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/27 21:29:39 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/28 20:01:49 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	int	count;
 
-	i = 0;
-	while (s[i])
+	count = 0;
+	while (lst)
 	{
-		(*f)(i, &s[i]);
-		i++;
+		count++;
+		lst = lst->next;
 	}
+	return (count);
 }
-/*void	f(unsigned int i, char *c)
+/*int main()
 {
-	*c += 1;
-}
-int main()
-{
-	char s[] = "abc..+-  ";
-	ft_striteri(s, f);
-	printf("%s\n", s);
-	return (0);
+	t_list *head = NULL;
+	head = ft_lstnew("first");
+	
+	t_list *second = ft_lstnew("Second");
+	head->next = second;
+
+	t_list *third = ft_lstnew("Third");
+	second->next = third;
+
+	third->next = NULL;
+
+	int size = ft_lstsize(head);
+	printf("%d\n", size);
+	free (head);
+	return 0;
 }*/

@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 18:05:55 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/29 18:46:35 by iumorave         ###   ########.fr       */
+/*   Created: 2024/10/29 17:13:14 by iumorave          #+#    #+#             */
+/*   Updated: 2024/10/29 17:25:49 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
+	t_list	*new_list;
+	t_list	*new_obj;
 
-	i = 0;
-	while (s[i])
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		(*f)(i, &s[i]);
-		i++;
+		new_obj = ft_lstnew(f (lst->content));
+		if (!new_obj)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_obj);
+		lst = lst->next;
 	}
+	return (new_list);
 }
-/*void	f(unsigned int i, char *c)
-{
-	*c += 1;
-}
-int main()
-{
-	char s[] = "abc..+-  ";
-	ft_striteri(s, f);
-	printf("%s\n", s);
-	return (0);
-}*/

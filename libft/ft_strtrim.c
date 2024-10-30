@@ -6,12 +6,11 @@
 /*   By: iumorave <iumorave@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:35:02 by iumorave          #+#    #+#             */
-/*   Updated: 2024/10/22 20:06:53 by iumorave         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:47:19 by iumorave         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	find(char c, const char *str)
 {
